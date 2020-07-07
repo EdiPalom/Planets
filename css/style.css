@@ -1,0 +1,411 @@
+@keyframes planet_frames
+{
+    100% {background-position: -8000px;}
+}
+
+@keyframes planet_earth_x
+{
+    from {background-position-x: 0px;}
+    to {background-position-x: -3500px;}
+}
+
+@keyframes planet_earth_y
+{
+    from {background-position-y: 0px;}
+    to {background-position-y: -1400px;}
+}
+
+@keyframes planet1_x
+{
+    from {background-position-x: 0px;}
+    to {background-position-x: -3000px;}
+}
+
+@keyframes planet1_y
+{
+    from {background-position-y: 0px;}
+    to {background-position-y: -1200px;}
+}
+
+
+@keyframes planet2_x
+{
+    from {background-position-x: 0px;}
+    to {background-position-x: -2000px;}
+}
+
+@keyframes planet2_y
+{
+    from {background-position-y: 0px;}
+    to {background-position-y: -800px;}
+}
+
+body
+{
+    background: #5492a9;
+    margin: 0;
+    padding:0;
+    border:0;
+    color: #fff;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family:"Liberation Sans",sans-serif;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background-image: linear-gradient(to bottom, #051937, #0f2748, #193659, #22456b, #2c557d);
+    /* background-repeat:no-repeat; */
+
+}
+
+.header::after
+{
+    content: '';
+    width: 100%;
+    height:100vh;
+    /* background-image: url(../img/background.jpg); */
+    /* background-repeat:no-repeat; */
+    /* background-size:cover; */
+    /* background-position:center; */
+
+    display: block;
+}
+
+#planet_name
+{
+    display:block;
+    font-size: 3rem;
+    margin:0;
+    background: #323232;
+    padding: 10px;
+    /* border-style: dotted; */
+    border-radius: 25px;
+}
+
+.planet_logo
+{    
+    position:absolute; 
+    width:500px;
+    height:281px;
+    left:70%;
+    background: url(../img/Planets.png)center;
+    background-position: 0px 0px;
+    background-repeat:no-repeat;
+}
+
+.header-content
+{
+    position: absolute; 
+    z-index: 1;
+    top:0%;
+    left:3%;
+    margin-top: 0px;
+    margin-bottom:0px;
+    border-bottom:0px;
+    padding-bottom:0px;
+    border-top: 0px;
+    padding-top: 0px;
+    /* margin-top: 50px; */
+    margin-left: 0px;
+    text-align:center;
+    width: 500px;
+    height: 500px;
+}
+
+/* ul.planets */
+/* { */
+/*     list-style-type: none; */
+/*     float: right; */
+/* } */
+/*  */
+/* ul.planets li */
+/* { */
+/*     display: table-cell; */
+/*     /* margin: 100px; */ */
+/*     /* padding: 0px 0px 0px 0px; */ */
+/* } */
+.container
+{
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 4rem 1rem;
+}
+
+.grid-4
+{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin-top: 130px;
+}
+
+#planet
+{
+    width:400px;
+    height:400px;
+    display:block;
+    background: url(../img/planet.png)center;
+    background-position: 0px 0px;
+    background-repeat:no-repeat;
+
+    /* transform: scale(0.7) translateX(-100px); */
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+
+
+    /* transition: transform; */
+    /* transition-duration: 1s; */
+    /* transition-delay: 0.01s; */
+    /* transition-timing-function: linear; */
+
+    /* animation: planet_frames 1.5s steps(20) infinite; */
+    /* animation-name: planet_frames; */
+    /* animation-duration: 4s; */
+}
+
+.text-center
+{
+    text-align:center;
+}
+
+.title
+{
+    /* left: 80%; */
+    padding:0;
+    border:0;
+    margin-left:75%;
+    margin-bottom: 0;
+    padding-bottom:0;
+    margin-top:0px;
+    font-size: 4rem;
+}
+
+#planet:hover
+{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    animation: planet_frames 1.5s steps(20) infinite;
+    /* background-position:-400px 0px; */
+}
+
+#planet_earth
+{
+    width:350px;
+    height:350px;
+    display:block;
+    background: url(../img/Earth.png)center;
+    background-position: 0px 0px;
+    background-repeat:no-repeat;
+
+    transform: scale(0.7) translateX(-100px);
+    -webkit-transform: scale(0.7) translateX(-100px);
+
+    /* animation: planet_frames 1.5s steps(20) infinite; */
+    /* animation-name: planet_frames; */
+    /* animation-duration: 4s; */
+}
+
+#planet_earth:hover
+{
+    transform: scale(1) translateX(-100px);
+    -webkit-transform: scale(1) translateX(-80px);
+    animation: planet_earth_x 1s steps(10) infinite, planet_earth_y 4s steps(4) infinite;
+/*     animation: planet_earth_x 1s steps(10) infinite; */
+/*     animation: planet_earth_y 4s steps(4) infinite; */
+/*     /* background-position:-400px 0px; */ */
+}
+
+#planet1
+{
+    width:300px;
+    height:300px;
+    display:block;
+    background: url(../img/Planet1.png)center;
+    background-position: 0px 0px;
+    background-repeat:no-repeat;
+
+    transform: translate(-100px,50px) scale(0.7);
+    -webkit-transform: translate(-100px,50px) scale(0.7);
+    /* transform: scale(0.7); */
+    /* -webkit-transform: scale(0.7); */
+
+    /* transition: transform; */
+    /* transition-duration: 1s; */
+    /* transition-delay: 0.01s; */
+    /* transition-timing-function: linear; */
+
+    /* animation: planet_frames 1.5s steps(20) infinite; */
+    /* animation-name: planet_frames; */
+    /* animation-duration: 4s; */
+}
+
+#planet1:hover
+{
+    animation: planet1_x 1s steps(10) infinite, planet1_y 4s steps(4) infinite;
+    transform: scale(1) translate(-80px, 50px);
+    -webkit-transform: scale(1) translate(-80px,80px);
+
+/*     animation: planet_earth_x 1s steps(10) infinite; */
+/*     animation: planet_earth_y 4s steps(4) infinite; */
+/*     /* background-position:-400px 0px; */ */
+}
+
+#planet2
+{
+    width:200px;
+    height:200px;
+    display:block;
+    background: url(../img/Planet2.png)center;
+    background-position: 0px 0px;
+    background-repeat:no-repeat;
+
+    transform: translate(-100px,90px) scale(0.7);
+    -webktit-transform: translate(-100px,90px);
+
+    /* animation: planet_frames 1.5s steps(20) infinite; */
+    /* animation-name: planet_frames; */
+    /* animation-duration: 4s; */
+}
+
+#planet2:hover
+{
+    transform: scale(1) translate(-110px, 70px);
+    -webkit-transform: scale(1) translate(-120px, 70px);
+
+    animation: planet2_x 1s steps(10) infinite, planet2_y 4s steps(4) infinite;
+/*     animation: planet_earth_x 1s steps(10) infinite; */
+/*     animation: planet_earth_y 4s steps(4) infinite; */
+/*     /* background-position:-400px 0px; */ */
+}
+
+@media(max-width: 560px)
+{
+    /* .header::after */
+    /* { */
+
+        /* width: 100%; */
+        /* height:100vh; */
+        /* background-image: url(../img/background.jpg)repeat-ygcc; */
+        /* background-repeat:repeat-y; */
+        /* height:10vh; */
+    /* } */
+        
+    body
+    {
+        overflow:visible;
+    }
+
+    .header_content
+    {
+        position: absolute;
+        left: 0%;
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+
+    .planet_logo
+    {    
+        position:absolute; 
+        width:300px;
+        height:169px;
+        left:10%;
+        background: url(../img/Planets_small.png)center;
+        background-position: 0px 0px;
+        background-repeat:no-repeat;
+    }
+
+    .grid-4
+    {
+        grid-template-columns: 1fr;
+        margin-top: 100px;
+    }
+
+    #planet
+    {
+        position: absolute;
+        /* display: bloc; */
+        left:5%;
+        top:30%;
+        /* left: 0; */
+        transform: scale(0.5);
+        /* -webkit-transform: scale(0.4) translateX(-100); */
+        -webkit-transform: scale(0.5);
+    }
+
+    #planet:hover
+    {
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        margin:0;
+        padding:0;
+        border:0;
+        /* transform: scale(0.8) translateX(-10); */
+        /* transform: scale(0.8) translateX(-80); */
+    }
+
+
+    #planet_earth
+    {
+        position: absolute;
+        /* display: bloc; */
+        left:10%;
+        top:90%;
+
+        transform: scale(0.7) translateX(0px);
+        -webkit-transform: scale(0.7) translateX(0px);
+
+        /* animation: planet_frames 1.5s steps(20) infinite; */
+        /* animation-name: planet_frames; */
+        /* animation-duration: 4s; */
+    }
+
+    #planet_earth:hover
+    {
+        transform: scale(1) translateX(0px);
+        -webkit-transform: scale(1) translateX(0px);
+    }
+
+    #planet1
+    {
+
+        position: absolute;
+        /* display: bloc; */
+        left:10%;
+        top:150%;
+
+        transform:scale(0.7);
+        -webkit-transform: scale(0.7);
+    }
+
+    #planet1:hover
+    {
+        transform: scale(1) translate(0px);
+        -webkit-transform: scale(1) translate(0px);
+
+    }
+
+    #planet2
+    {
+        position: absolute;
+        /* display: bloc; */
+        left:20%;
+        top:205%;
+        transform: translate(0px) scale(0.7);
+        -webktit-transform: translate(0px);
+    }
+
+    #planet2:hover
+    {
+        transform: scale(1) translate(0px);
+        -webkit-transform: scale(1) translate(0px);
+    }
+
+    #planet_name
+    {
+        position: absolute;
+        top: 25%;
+        left:5%;
+    }
+
+}
