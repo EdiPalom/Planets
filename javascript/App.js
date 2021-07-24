@@ -1,17 +1,6 @@
 
-// document.write("hello world!");
-// console.log("hello world!");
-//
-// var planet_name = document.getElementById('planet_name').innerHtml="Hello World";
-
-
-// planet_name.innerHtml = "Hello World"
-// planet_name.style.color="red";
-//
 function planet_name(obj)
 {
-    // if()
-    // console.log(obj.id);
     switch(obj.id)
     {
         case "planet":
@@ -32,11 +21,6 @@ function planet_name(obj)
 
     }
 }
-//
-// function planet_name(obj)
-// {
-//     obj.innerHTML = "planet";
-// }
 
 function reset()
 {
@@ -45,47 +29,43 @@ function reset()
 
 function getRandomPosition()
 {
-    // var x = document.body.offsetHeight-element.clientHeight;
-    // var y = document.body.offsetWidth-element.clientWidth;
-    //
-    console.log(window.innerWidth, window.innerHeight);
-
-    // var x = window.innerWidth;
-    // var y = window.innerHeight;
     var x = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     var y = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;;
 
-    var rand_x = Math.floor(Math.random() * x);
-    var rand_y = Math.floor(Math.random() * y);
+    var rand_x = Math.floor(Math.random() * (x*2) - x);
+    var rand_y = Math.floor(Math.random() * 1200 - 600);
 
-    return [rand_x,rand_y];
+    return [rand_x,rand_y,x,y];
 }
 
 window.onload = function()
 {
-    let positions = [];
+    let stars = [];
+    let num_stars = 500;
     
-    for(i = 0; i < 500; i++)
+    for(let i = 0; i < num_stars; i++)
     {
-        positions.push(getRandomPosition());
+        stars.push(new Star(getRandomPosition()));
     }
 
-    positions.forEach(function(item, index, array)
-    {
-        // console.log(item);
-        var img = document.createElement('img');
-        img.setAttribute("style","position:absolute");
-        img.setAttribute("src", "img/stars.png");
-        img.style.top = item[1] + 'px';
-        img.style.left = item[0] + 'px';
-        document.body.appendChild(img);
-        //
-    });
+    function update(){
+        for(let i = 0; i < num_stars; i++)
+            stars[i].update();
 
-    // var img = document.createElement('img');
-    // img.setAttribute("style","position:absolute");
-    // img.setAttribute("src", "img/stars.png");
-    // img.style.top = 500 + 'px';
-    // img.style.left = 300 + 'px';
-    // document.body.appendChild(img);
+        pid = window.requestAnimationFrame(update);
+    }
+
+    pid = window.requestAnimationFrame(update);
+
+    // positions.forEach(function(item, index, array)
+    // {
+    //     var img = document.createElement('img');
+    //     img.setAttribute("style","position:absolute");
+    //     img.setAttribute("src", "img/stars.png");
+    //     img.style.top = item[1] + 'px';
+    //     img.style.left = item[0] + 'px';
+    //     document.body.appendChild(img);
+    // });
+    //
+        
 }
