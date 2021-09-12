@@ -1,2 +1,12 @@
 # Planets
-https://sad-hugle-618901.netlify.app/
+## Descripción 
+Página web utilizando animación 2D.
+
+## Tecnología utilizada
+- HTML5
+- CSS3
+- Javascript
+- Keyframes
+
+## Despliegue
+https://edipalom.github.io/Planets/
